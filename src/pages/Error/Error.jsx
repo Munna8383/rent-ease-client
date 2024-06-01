@@ -1,10 +1,11 @@
-
+import Lottie from "lottie-react";
+import erroranimation from "../../../public/error.json"
 
 const Error = () => {
     return (
-        <div>
+        <div className="flex min-h-screen justify-center items-center">
 
-            <h1>this error page</h1>
+<Lottie  className="" animationData={erroranimation} loop={true} />
             
         </div>
     );

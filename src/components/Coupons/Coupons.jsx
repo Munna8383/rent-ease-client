@@ -7,7 +7,7 @@ const Coupons = () => {
                 <h1 className='text-4xl font-bold text-blue-500'>Grab Our Exciting Offer</h1>
             </div>
 
-<div className="grid grid-cols-2 gap-5">
+<div className="grid grid-cols-2 gap-10">
 <div className="container mx-auto mt-10">
             <div className="bg-gradient-to-br from-blue-900 border-t-yellow-600 text-white text-center py-10 px-20 rounded-lg shadow-md relative">
                 <img src="https://i.ibb.co/f8tXzbM/pexels-pixabay-210742.jpg" className="w-20 mx-auto mb-4 rounded-lg"/>
