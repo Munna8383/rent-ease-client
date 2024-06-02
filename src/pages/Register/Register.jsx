@@ -2,7 +2,12 @@
 import registerImage from "../../assets/Register/AdobeStock_787093393_Preview.jpeg"
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
 import { useForm } from "react-hook-form";
+import useAuth from "../../hooks/useAuth";
+import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
+    const {createUser,updatePhotoAndName,logout}=useAuth()
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -11,9 +16,37 @@ const Register = () => {
 
     const onSubmit = (data) => {
         console.log(data)
+
+        const email = data.email
+        const password= data.password
+        const name=data.name
+        const photo = data.photo
+
+
+        
+        createUser(email,password)
+        .then(()=>{
+            updatePhotoAndName(name,photo)
+            .then(()=>{
+                toast.success('Registered Successfully')
+                logout()
+
+
+                setTimeout(()=>{
+                       navigate("/login")
+                       
+                },2000)
+            })
+        })
+
+
+
+
+
     }
     return (
         <div className="p-20 w-11/12 mx-auto">
+            <Toaster></Toaster>
 
 
         <div className=" lg:flex items-center mt-10 bg-gray-200 shadow-2xl">
@@ -78,6 +111,14 @@ const Register = () => {
                                 required: {
                                     value: true,
                                     message: "This field is required"
+                                },
+                                minLength:{
+                                    value:8,
+                                    message:"The minimum input is 8"
+                                },
+                                pattern:{
+                                    value:/^(?=.*[A-Z])(?=.*\d).+$/,
+                                    message:"Minimum one capital letter and a number"
                                 }
                             })} />
 
@@ -85,7 +126,7 @@ const Register = () => {
                         </div>
 
 
-                        <button type="submit" className="text-white w-full mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
+                        <button type="submit" className="text-white w-full mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register</button>
                     </form>
                     <SocialLogin></SocialLogin>
                 </div>

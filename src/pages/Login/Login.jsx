@@ -1,7 +1,9 @@
 import loginImage from "../../assets/Login/12953573_Data_security_05.jpg"
 import { useForm } from "react-hook-form"
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import toast, { Toaster } from "react-hot-toast";
 
 
 
@@ -9,6 +11,9 @@ import { Link } from "react-router-dom";
 
 
 const Login = () => {
+    const {login}= useAuth()
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const {
         register,
@@ -17,10 +22,29 @@ const Login = () => {
     } = useForm()
 
     const onSubmit = (data) => {
-        console.log(data)
+
+        const email = data.email
+        const password = data.password
+        console.log(email,password)
+
+        login(email,password)
+        .then(() => {
+
+            toast.success('Logged In Successfully')
+        
+            setTimeout(()=>{
+                navigate(location?.state || "/")
+            },2000)
+        
+          })
+          .catch(()=>{
+            toast.error("Incorrect username or password")
+          })
+
     }
     return (
         <div className="p-20 w-11/12 mx-auto">
+             <Toaster></Toaster>
 
 
             <div className=" lg:flex mt-10 bg-gray-200 shadow-2xl">

@@ -7,6 +7,7 @@ import MainLayout from "../layout/MainLayot/MainLayout";
 import Apartment from "../pages/Apartment/Apartment";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -22,7 +23,7 @@ import Register from "../pages/Register/Register";
         },
         {
           path:"/apartment",
-          element: <Apartment></Apartment>
+          element:<PrivateRoute><Apartment></Apartment></PrivateRoute>
         },
         {
           path:"/login",
