@@ -1,20 +1,42 @@
 import toast, { Toaster } from "react-hot-toast";
-import { useLocation, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const SocialLogin = () => {
     const {googleLogin}= useAuth()
-    const location = useLocation()
+    const axiosPublic = useAxiosPublic()
     const navigate = useNavigate()
     const handleLogin=()=>{
         googleLogin()
-        .then(()=>{
+        .then(result=>{
 
+            const userInfo = {
+                email: result.user?.email,
+                name:result.user?.displayName,
+                role:"user"
+            }
+
+            axiosPublic.post("/user",userInfo)
+            .then(res=>{
+
+
+                if(res.data.insertedId){
+
+                    
             toast.success('Logged In Successfully')
 
             setTimeout(()=>{
-                navigate(location?.state || "/")
+                navigate("/")
             },2000)
+
+
+
+                }
+            })
+
+            navigate("/")
+
            
         })
         .catch(()=>{

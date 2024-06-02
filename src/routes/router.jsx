@@ -23,7 +23,8 @@ import PrivateRoute from "./PrivateRoute";
         },
         {
           path:"/apartment",
-          element:<PrivateRoute><Apartment></Apartment></PrivateRoute>
+          element:<PrivateRoute><Apartment></Apartment></PrivateRoute>,
+          loader: ()=> fetch("http://localhost:5000/apartmentCount")
         },
         {
           path:"/login",

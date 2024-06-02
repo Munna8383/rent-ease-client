@@ -5,9 +5,11 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 const Register = () => {
     const {createUser,updatePhotoAndName,logout}=useAuth()
     const navigate = useNavigate()
+    const axiosPublic = useAxiosPublic()
     const {
         register,
         handleSubmit,
@@ -28,7 +30,18 @@ const Register = () => {
         .then(()=>{
             updatePhotoAndName(name,photo)
             .then(()=>{
-                toast.success('Registered Successfully')
+
+                const userInfo = {
+                    name:data.name,
+                    email:data.email,
+                    role:"user"
+                }
+
+                axiosPublic.post("/user",userInfo)
+                .then(res=>{
+                    if(res.data.insertedId){
+
+                        toast.success('Registered Successfully')
                 logout()
 
 
@@ -36,6 +49,16 @@ const Register = () => {
                        navigate("/login")
                        
                 },2000)
+
+                        
+                    }
+                })
+
+
+
+
+
+                
             })
         })
 
