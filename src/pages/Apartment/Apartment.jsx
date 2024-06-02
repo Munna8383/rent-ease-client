@@ -1,26 +1,48 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure"
 import { useLoaderData } from "react-router-dom";
+import { useState } from "react";
 
 
 
 const Apartment = () => {
     const axiosSecure = useAxiosSecure()
     const {count} = useLoaderData()
+    const [currentPage,setCurrentPage]=useState(0)
+    const itemPerPage = 6
+    const numberOfPage = Math.ceil(count/itemPerPage)
+
+    const pages = [...Array(numberOfPage).keys()]
 
 
     const {data:apartment=[],isLoading}=useQuery({
-        queryKey:["allApartment"],
+        queryKey:["allApartment",currentPage,itemPerPage],
         queryFn:async()=>{
 
-            const res = await axiosSecure.get("/apartments")
+            const res = await axiosSecure.get(`/apartments?page=${currentPage}&size=${itemPerPage}`)
 
             return res.data
         }
     })
 
-    console.log(apartment)
-    console.log(count)
+    const handlePrevious =()=>{
+        if(currentPage>0){
+            setCurrentPage(currentPage-1)
+        }
+    }
+
+    const handleNext=()=>{
+
+        if(currentPage<pages.length-1){
+            setCurrentPage(currentPage+1)
+        }
+
+
+
+    }
+
+   
+
     return (
         <div className="w-11/12 mx-auto pt-20">
             {
@@ -31,11 +53,11 @@ const Apartment = () => {
                 <h1 className='text-4xl font-bold text-blue-500'>Explore Our Apartments</h1>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
                 {
-                    apartment.map((item,index)=><div key={index} className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    apartment.map((item,index)=><div key={index} className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:scale-[0.9]">
                     
-                            <img className="p-8 h-[300px] rounded-t-lg" src={item.apartment_image} alt="product image" />
+                            <img className="p-8 h-[300px] w-full rounded-t-lg" src={item.apartment_image} alt="product image" />
                         
                         <div className="px-5 pb-5 space-y-2">
                         
@@ -50,12 +72,20 @@ const Apartment = () => {
                             
                             <div className="flex items-center justify-between">
                                 <span className="text-3xl font-bold text-gray-900 dark:text-white">${item.rent}</span>
-                                <button className="text-white  mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 font-bold text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Rent</button>
+                                <button className="text-white  mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 font-bold text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agreement</button>
                             </div>
                         </div>
                     </div>
                     )
                 }
+            </div>
+
+            <div className="flex justify-center space-x-5 mt-5">
+                <button onClick={handlePrevious} className="btn btn-warning">Previous</button>
+                {
+                    pages.map(page=><button onClick={()=>setCurrentPage(page)} className={currentPage===page?" btn-primary btn":"btn btn-accent"} key={page}>{page}</button>)
+                }
+                <button onClick={handleNext} className="btn btn-warning">Next</button>
             </div>
             
         </div>

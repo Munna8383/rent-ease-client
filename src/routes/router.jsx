@@ -8,6 +8,8 @@ import Apartment from "../pages/Apartment/Apartment";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import DashboardLayout from "../layout/DashboardLayout/DashboardLayout";
+import Welcome from "../Dashboard/Welcome/Welcome";
 
 
 
@@ -36,6 +38,17 @@ import PrivateRoute from "./PrivateRoute";
         }
       ]
     },
+
+    {
+      path:"dashboard",
+      element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+      children:[
+        {
+          path:"welcome",
+          element:<Welcome></Welcome>
+        }
+      ]
+    }
   ]);
 
   export default router;

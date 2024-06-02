@@ -38,6 +38,9 @@ const Navbar = () => {
       <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
       <li><NavLink to={"/"} className={({isActive})=>isActive?"font-bold  text-blue-500 border-b-2 border-blue-500":"font-bold text-black"}>Home</NavLink></li>
       <li><NavLink to={"/apartment"} className={({isActive})=>isActive?"font-bold  text-blue-500 border-b-2 border-blue-500":"font-bold text-black"}>Apartment</NavLink></li>
+      {
+        user&&<li><NavLink to={"/dashboard/welcome"} className={({isActive})=>isActive?"font-bold  text-blue-500 border-b-2 border-blue-500":"font-bold text-black"}>Dashboard</NavLink></li>
+      }
       </ul>
     </div>
    <div className="flex items-center">
@@ -46,9 +49,12 @@ const Navbar = () => {
    </div>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-1 space-x-3">
     <li><NavLink to={"/"} className={({isActive})=>isActive?"font-bold  text-blue-500 border-b-2 border-blue-500":"font-bold text-black"}>Home</NavLink></li>
       <li><NavLink to={"/apartment"} className={({isActive})=>isActive?"font-bold  text-blue-500 border-b-2 border-blue-500":"font-bold text-black"}>Apartment</NavLink></li>
+      {
+        user&&<li><NavLink to={"/dashboard/welcome"} className={({isActive})=>isActive?"font-bold  text-blue-500 border-b-2 border-blue-500":"font-bold text-black"}>Dashboard</NavLink></li>
+      }
     </ul>
   </div>
   <div className="navbar-end space-x-5">
