@@ -10,6 +10,13 @@ import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import DashboardLayout from "../layout/DashboardLayout/DashboardLayout";
 import Welcome from "../Dashboard/Welcome/Welcome";
+import AdminProfile from "../Dashboard/Admin/AdminProfile/AdminProfile";
+import ManageUsers from "../Dashboard/Admin/ManageUsers/ManageUsers";
+import AddAnnouncement from "../Dashboard/Admin/AddAnnoncement/AddAnnouncement";
+import ManageCoupons from "../Dashboard/Admin/ManageCoupons/ManageCoupons";
+import ManageAgreement from "../Dashboard/Admin/ManageAgreement/ManageAgreement";
+import UserProfile from "../Dashboard/User/UserProfile/UserProfile";
+import Announcement from "../Dashboard/Shared/Announcement";
 
 
 
@@ -39,6 +46,8 @@ import Welcome from "../Dashboard/Welcome/Welcome";
       ]
     },
 
+    // Dashboard Routes
+
     {
       path:"dashboard",
       element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
@@ -46,6 +55,36 @@ import Welcome from "../Dashboard/Welcome/Welcome";
         {
           path:"welcome",
           element:<Welcome></Welcome>
+        },
+        // Admin Routes
+        {
+          path:"adminProfile",
+          element:<AdminProfile></AdminProfile>
+        },
+        {
+          path:"manageUsers",
+          element:<ManageUsers></ManageUsers>
+        },
+        {
+          path:"addAnnouncement",
+          element:<AddAnnouncement></AddAnnouncement>
+        },
+        {
+          path:"manageCoupons",
+          element:<ManageCoupons></ManageCoupons>
+        },
+        {
+          path:"manageAgreement",
+          element:<ManageAgreement></ManageAgreement>
+        },
+        // user routes
+        {
+          path:"userProfile",
+          element:<UserProfile></UserProfile>
+        },
+        {
+          path:"userAnnouncements",
+          element:<Announcement></Announcement>
         }
       ]
     }
