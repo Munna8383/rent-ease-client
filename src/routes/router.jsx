@@ -17,6 +17,9 @@ import ManageCoupons from "../Dashboard/Admin/ManageCoupons/ManageCoupons";
 import ManageAgreement from "../Dashboard/Admin/ManageAgreement/ManageAgreement";
 import UserProfile from "../Dashboard/User/UserProfile/UserProfile";
 import Announcement from "../Dashboard/Shared/Announcement";
+import MemberProfile from "../Dashboard/Member/MemberProfile/MemberProfile";
+import MakePayment from "../Dashboard/Member/MakePayment/MakePayment";
+import PaymentHistory from "../Dashboard/Member/PaymenHistory/PaymentHistory";
 
 
 
@@ -85,6 +88,23 @@ import Announcement from "../Dashboard/Shared/Announcement";
         {
           path:"userAnnouncements",
           element:<Announcement></Announcement>
+        },
+        // member routes
+        {
+          path:"memberProfile",
+          element:<MemberProfile></MemberProfile>
+        },
+        {
+          path:"makePayment",
+          element:<MakePayment></MakePayment>
+        },
+        {
+          path:"memberAnnouncements",
+          element:<Announcement></Announcement>
+        },
+        {
+          path:"paymentHistory",
+          element:<PaymentHistory></PaymentHistory>
         }
       ]
     }

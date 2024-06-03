@@ -27,7 +27,7 @@ const Coupons = () => {
                 <span id="cpnCode" className="border-dashed border text-white px-4 py-2 rounded-l">{item?.code}</span>
                 <span id="cpnBtn" className="border border-white bg-white text-purple-600 px-4 py-2 rounded-r cursor-pointer">GET</span>
             </div>
-            <p className="text-sm">Grab the {item?.percentage}% discount</p>
+            <p className="text-sm">Valid Till: {item?.validDate}</p>
             
 <div className="w-12 h-12 bg-white rounded-full absolute top-1/2 transform -translate-y-1/2 left-0 -ml-6"></div>
 <div className="w-12 h-12 bg-white rounded-full absolute top-1/2 transform -translate-y-1/2 right-0 -mr-6"></div>

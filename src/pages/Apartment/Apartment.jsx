@@ -55,7 +55,7 @@ const Apartment = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
                 {
-                    apartment.map((item,index)=><div key={index} className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:scale-[0.9]">
+                    apartment.map((item,index)=><div key={index} className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     
                             <img className="p-8 h-[300px] w-full rounded-t-lg" src={item.apartment_image} alt="product image" />
                         

@@ -1,12 +1,20 @@
 import toast, { Toaster } from "react-hot-toast";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useCoupon from "../../../hooks/useCoupon";
+import { useState } from "react";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
+
 
 const ManageCoupons = () => {
+    const [startDate, setStartDate] = useState(new Date());
+
     const axiosSecure = useAxiosSecure()
     const [coupons,refetch,isLoading]= useCoupon()
 
-    console.log(coupons)
+
+  
       
 
     const handleSubmit=e=>{
@@ -16,9 +24,12 @@ const ManageCoupons = () => {
         const code = e.target.code.value
         const percentage= parseInt(e.target.percentage.value)
         const description= e.target.description.value
+        const  validDate =startDate.toString().substring(4,15);
 
 
-        const coupon = {code,percentage,description}
+        const coupon = {code,percentage,description,validDate}
+
+        console.log(coupon)
 
         axiosSecure.post("/addCoupons",coupon)
         .then(res=>{
@@ -72,6 +83,12 @@ const ManageCoupons = () => {
                                     </label>
                                     <input type="text" name="description"  placeholder=" Enter Description" className="input input-bordered" required />
                                 </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Select Date</span>
+                                    </label>
+                                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
+                                </div>
 
                                 <div className="form-control mt-6">
                             <button type="submit" className="text-white w-full mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add</button>
@@ -111,21 +128,27 @@ const ManageCoupons = () => {
     {/* head */}
     <thead>
       <tr  className="border-2 border-black" >
-        <th>Number</th>
-        <th>Code</th>
+        
+      <th>Code</th>
         <th>Percentage</th>
+        
         <th>Description</th>
+        <th>Validity</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
       {/* row 1 */}
 
       {
-        coupons.map((item,index)=> <tr className="border-2 border-black" key={index}>
-        <th>{index+1}</th>
+        coupons?.map((item,index)=> <tr className="border-2 border-black" key={index}>
+        
         <td>{item.code}</td>
         <td>{item.percentage}%</td>
         <td>{item.description}</td>
+        <td>{item?.validDate}</td>
+        <td>Change</td>
+        
       </tr>)
       }
      

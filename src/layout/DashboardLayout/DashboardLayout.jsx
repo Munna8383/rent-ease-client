@@ -37,9 +37,12 @@ const DashboardLayout = () => {
     person?.role==="member"&& <ul className="menu">
     {/* Sidebar content here */}
 
-  
-    <li>member</li>
-    <li><a>Sidebar Item 2</a></li>
+    <li><NavLink to={"/dashboard/memberProfile"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Member Profile</NavLink></li>
+    <li><NavLink to={"/dashboard/makePayment"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Make Payment</NavLink></li>
+    <li><NavLink to={"/dashboard/paymentHistory"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Payment History</NavLink></li>
+
+
+    <li><NavLink to={"/dashboard/memberAnnouncements"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Announcements</NavLink></li>   
   </ul>
    }
    {
