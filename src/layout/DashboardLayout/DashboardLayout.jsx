@@ -17,13 +17,13 @@ const DashboardLayout = () => {
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content flex flex-col items-center justify-center">
     {/* Page content here */}
-    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button mt-5 lg:hidden">Open Dashboart</label>
+    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button mt-5 lg:hidden">Open Dashboard</label>
   
   </div> 
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label> 
 
-    <div className="py-4 w-60 min-h-full bg-slate-700 text-base-content flex flex-col justify-between">
+    <div className="py-4 w-60 min-h-full bg-slate-700 z-50 text-base-content flex flex-col justify-between">
 
    {
     person?.role==="user"&& <ul className="menu">

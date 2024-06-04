@@ -2,10 +2,15 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure"
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
+import useAuth from "../../hooks/useAuth";
+import moment from "moment";
+import toast, { Toaster } from "react-hot-toast";
+import useMyApartment from "../../hooks/useMyApartment";
 
 
 
 const Apartment = () => {
+    const {user}=useAuth()
     const axiosSecure = useAxiosSecure()
     const {count} = useLoaderData()
     const [currentPage,setCurrentPage]=useState(0)
@@ -13,6 +18,9 @@ const Apartment = () => {
     const numberOfPage = Math.ceil(count/itemPerPage)
 
     const pages = [...Array(numberOfPage).keys()]
+
+    const [Myapartment,refetch] = useMyApartment()
+
 
 
     const {data:apartment=[],isLoading}=useQuery({
@@ -41,6 +49,33 @@ const Apartment = () => {
 
     }
 
+
+    const handleAgreement =(item)=>{
+
+        const name = user?.displayName
+        const email = user?.email
+        const floor = item.floor_no
+        const block = item.block_name
+        const apartment = item.apartment_no
+        const rent = parseInt(item.rent)
+        const requestDate = moment(new Date()).format("MMM Do YY")
+        const status = "pending" 
+
+
+        const agreementData = {name,email,floor,block,apartment,rent,requestDate,status}
+
+        axiosSecure.post("/addAgreement",agreementData)
+        .then(res=>{
+            if(res.data.insertedId){
+                toast.success("request for agreement")
+                refetch()
+            }
+        })
+
+
+    }
+        
+
    
 
     return (
@@ -48,6 +83,7 @@ const Apartment = () => {
             {
                 isLoading&&<div className="min-h-screen flex justify-center items-center"><span className="loading loading-bars loading-lg"></span></div>
             }
+            <Toaster></Toaster>
 
 <div className='text-center'>
                 <h1 className='text-4xl font-bold text-blue-500'>Explore Our Apartments</h1>
@@ -72,7 +108,7 @@ const Apartment = () => {
                             
                             <div className="flex items-center justify-between">
                                 <span className="text-3xl font-bold text-gray-900 dark:text-white">${item.rent}</span>
-                                <button className="text-white  mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 font-bold text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agreement</button>
+                                <button disabled={Myapartment} onClick={()=>handleAgreement(item)} className="text-white  mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 font-bold text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agreement</button>
                             </div>
                         </div>
                     </div>

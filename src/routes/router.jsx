@@ -20,6 +20,7 @@ import Announcement from "../Dashboard/Shared/Announcement";
 import MemberProfile from "../Dashboard/Member/MemberProfile/MemberProfile";
 import MakePayment from "../Dashboard/Member/MakePayment/MakePayment";
 import PaymentHistory from "../Dashboard/Member/PaymenHistory/PaymentHistory";
+import ChangeValidity from "../Dashboard/Admin/ManageCoupons/ChangeValidity";
 
 
 
@@ -75,6 +76,11 @@ import PaymentHistory from "../Dashboard/Member/PaymenHistory/PaymentHistory";
         {
           path:"manageCoupons",
           element:<ManageCoupons></ManageCoupons>
+        },
+        {
+          path:"changeCoupon/:id",
+          element:<ChangeValidity></ChangeValidity>
+
         },
         {
           path:"manageAgreement",

@@ -5,6 +5,8 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
+import { Link } from "react-router-dom";
+import moment from "moment";
 
 
 const ManageCoupons = () => {
@@ -24,12 +26,10 @@ const ManageCoupons = () => {
         const code = e.target.code.value
         const percentage= parseInt(e.target.percentage.value)
         const description= e.target.description.value
-        const  validDate =startDate.toString().substring(4,15);
+        const  validDate = moment(startDate).format("MMM Do YY");
 
 
         const coupon = {code,percentage,description,validDate}
-
-        console.log(coupon)
 
         axiosSecure.post("/addCoupons",coupon)
         .then(res=>{
@@ -41,6 +41,8 @@ const ManageCoupons = () => {
 
             }
         })
+
+        console.log(validDate)
 
 
 
@@ -147,7 +149,7 @@ const ManageCoupons = () => {
         <td>{item.percentage}%</td>
         <td>{item.description}</td>
         <td>{item?.validDate}</td>
-        <td>Change</td>
+        <td><Link to={`/dashboard/changeCoupon/${item._id}`}>Change Validity</Link></td>
         
       </tr>)
       }
