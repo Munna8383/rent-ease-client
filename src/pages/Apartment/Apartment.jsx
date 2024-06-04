@@ -59,10 +59,11 @@ const Apartment = () => {
         const apartment = item.apartment_no
         const rent = parseInt(item.rent)
         const requestDate = moment(new Date()).format("MMM Do YY")
+        const room = item.room
         const status = "pending" 
 
 
-        const agreementData = {name,email,floor,block,apartment,rent,requestDate,status}
+        const agreementData = {name,email,floor,block,apartment,rent,requestDate,status,room}
 
         axiosSecure.post("/addAgreement",agreementData)
         .then(res=>{
