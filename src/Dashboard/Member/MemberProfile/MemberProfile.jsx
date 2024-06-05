@@ -6,7 +6,6 @@ const MemberProfile = () => {
     const { user } = useAuth()
     const [MyApartment] = useMyApartment()
 
-    console.log(MyApartment)
     return (
         <div>
 

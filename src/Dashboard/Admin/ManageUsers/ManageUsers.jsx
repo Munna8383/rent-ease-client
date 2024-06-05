@@ -32,7 +32,7 @@ const ManageUsers = () => {
         <Toaster></Toaster>
 
 <div className='text-center'>
-                <h1 className='text-2xl lg:text-4xl font-bold text-blue-500'>Manage Users</h1>
+                <h1 className='text-2xl lg:text-4xl font-bold text-[#062760]'>Manage Users</h1>
             </div>
 
 

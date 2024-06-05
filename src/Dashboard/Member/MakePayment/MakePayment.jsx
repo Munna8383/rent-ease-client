@@ -26,7 +26,7 @@ const MakePayment = () => {
         axiosSecure.put(`/paymentMonth/${user?.email}`,paidMonth)
         .then(res=>{
             console.log(res.data)
-            if(res.data.modifiedCount===1){
+            if(res.data.modifiedCount===1 ||res.data.matchedCount===1){
                 navigate("/dashboard/paymentPage")
             }
         })
