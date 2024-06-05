@@ -19,7 +19,7 @@ const Apartment = () => {
 
     const pages = [...Array(numberOfPage).keys()]
 
-    const [Myapartment,refetch] = useMyApartment()
+    const [MyApartment,refetch] = useMyApartment()
 
 
 
@@ -109,7 +109,7 @@ const Apartment = () => {
                             
                             <div className="flex items-center justify-between">
                                 <span className="text-3xl font-bold text-gray-900 dark:text-white">${item.rent}</span>
-                                <button disabled={Myapartment} onClick={()=>handleAgreement(item)} className="text-white  mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 font-bold text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agreement</button>
+                                <button disabled={MyApartment} onClick={()=>handleAgreement(item)} className="text-white  mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 font-bold text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agreement</button>
                             </div>
                         </div>
                     </div>

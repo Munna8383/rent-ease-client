@@ -17,7 +17,7 @@ const Coupons = () => {
 
 </div>
 
-<div className="grid grid-cols-2 gap-10">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
     {
         coupons?.map((item,index)=><div key={index} className="container mx-auto mt-10">
         <div className="bg-gradient-to-br from-blue-900 border-t-yellow-600 text-white text-center py-10 px-20 rounded-lg shadow-md relative">

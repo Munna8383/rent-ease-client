@@ -21,6 +21,7 @@ import MemberProfile from "../Dashboard/Member/MemberProfile/MemberProfile";
 import MakePayment from "../Dashboard/Member/MakePayment/MakePayment";
 import PaymentHistory from "../Dashboard/Member/PaymenHistory/PaymentHistory";
 import ChangeValidity from "../Dashboard/Admin/ManageCoupons/ChangeValidity";
+import PaymentPage from "../Dashboard/Member/PaymentPage/PaymentPage";
 
 
 
@@ -111,6 +112,10 @@ import ChangeValidity from "../Dashboard/Admin/ManageCoupons/ChangeValidity";
         {
           path:"paymentHistory",
           element:<PaymentHistory></PaymentHistory>
+        },
+        {
+          path:"paymentPage",
+          element:<PaymentPage></PaymentPage>
         }
       ]
     }

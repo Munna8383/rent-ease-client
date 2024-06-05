@@ -13,11 +13,11 @@ const DashboardLayout = () => {
     return (
         <div className="flex gap-5">
 
-<div className="w-60 drawer lg:drawer-open">
+<div className="w-60 drawer md:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content flex flex-col items-center justify-center">
     {/* Page content here */}
-    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button mt-5 lg:hidden">Open Dashboard</label>
+    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button mt-5 md:hidden">Open Dashboard</label>
   
   </div> 
   <div className="drawer-side">
