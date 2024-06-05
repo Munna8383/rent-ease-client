@@ -6,7 +6,7 @@ const OurLocation = () => {
         <div className="w-11/12 mx-auto mt-24">
 
             <div className='text-center'>
-                <h1 className='text-4xl font-bold text-blue-500'>Find Us On Map</h1>
+                <h1 className='text-4xl font-bold text-[#062760]'>Find Us On Map</h1>
             </div>
 
 

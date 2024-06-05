@@ -25,7 +25,6 @@ const Login = () => {
 
         const email = data.email
         const password = data.password
-        console.log(email,password)
 
         login(email,password)
         .then(() => {

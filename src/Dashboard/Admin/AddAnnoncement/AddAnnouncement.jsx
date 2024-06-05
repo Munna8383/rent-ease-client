@@ -33,12 +33,12 @@ const AddAnnouncement = () => {
         <div className="space-y-5">
             <Toaster></Toaster>
 <div className='text-center'>
-                <h1 className='text-2xl lg:text-4xl font-bold text-blue-500'>Add Announcement</h1>
+                <h1 className='text-2xl lg:text-4xl font-bold text-[#062760]'>Add Announcement</h1>
             </div>
 
-            <div className="sm:flex justify-center items-center gap-10">
+            <div className="md:flex justify-center items-center gap-10">
 
-                <div className="hidden sm:block">
+                <div className="hidden md:block">
 
                     <img className="w-60" src="https://i.ibb.co/HGPm9Nd/loudspeaker-309554-1920.png"/>
 

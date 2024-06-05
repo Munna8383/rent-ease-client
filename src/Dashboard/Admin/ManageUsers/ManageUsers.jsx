@@ -56,7 +56,7 @@ const ManageUsers = () => {
         <th>{item.name}</th>
         <td>{item.email}</td>
         <td>{item.role}</td>
-        {item.role==="member"?<td><button onClick={()=>handleChangeMemberRole(item._id)} className="btn btn-warning">Remove</button></td>:<td>{item.role}</td>}
+        {item.role==="member"?<td><button onClick={()=>handleChangeMemberRole(item._id)} className="btn btn-xs text-white btn-error">Remove</button></td>:<td>{item.role}</td>}
 
       </tr>)
       }

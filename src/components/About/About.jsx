@@ -8,7 +8,7 @@ const About = () => {
 	<div className="container max-w-xl p-6 py-6 mx-auto space-y-6 lg:px-8 lg:max-w-7xl">
 		
 <div className='text-center'>
-                <h1 className='text-4xl font-bold text-blue-500'>About Our Building</h1>
+                <h1 className='text-4xl font-bold text-[#062760]'>About Our Building</h1>
             </div>
 		<div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
 			<div>

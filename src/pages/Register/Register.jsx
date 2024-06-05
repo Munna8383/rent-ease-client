@@ -74,15 +74,15 @@ const Register = () => {
 
         <div className=" lg:flex items-center mt-10 bg-gray-200 shadow-2xl">
 
-            <div className="hidden lg:block lg:w-1/2">
+            <div className="hidden h-[600px] lg:block lg:w-1/">
 
                 <img className=" h-full" src={registerImage} />
 
             </div>
 
 
-            <div className="w-full lg:w-1/2 px-5">
-                <div className='text-center mt-2'>
+            <div className="w-full h-[600px] lg:w-1/2 px-5">
+                <div className='text-center mt-5'>
                     <h1 className='text-3xl font-bold text-black'>Sign Up</h1>
                 </div>
                 <div>
@@ -149,7 +149,7 @@ const Register = () => {
                         </div>
 
 
-                        <button type="submit" className="text-white w-full mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register</button>
+                        <button type="submit" className="text-white w-full mt-5 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register</button>
                     </form>
                     <SocialLogin></SocialLogin>
                 </div>

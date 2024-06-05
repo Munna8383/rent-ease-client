@@ -56,7 +56,7 @@ const ManageAgreement = () => {
     return (
         <div>
              <div className='text-center'>
-                <h1 className='text-2xl lg:text-4xl font-bold text-blue-500'>Manage Agreements</h1>
+                <h1 className='text-2xl lg:text-4xl font-bold text-[#062760]'>Manage Agreements</h1>
             </div>
 
             <Toaster></Toaster>
@@ -89,7 +89,7 @@ const ManageAgreement = () => {
             <td>{item.block}</td> 
             <td>${item.rent}</td> 
             <td>{item.requestDate}</td>
-            <td className="flex gap-2"><button onClick={()=>handleAccept(item.email)} className="btn btn-sm btn-success">Accept</button><button onClick={()=>handleReject(item.email)} className="btn btn-sm btn-error">Reject</button></td>
+            <td className="flex gap-2"><button onClick={()=>handleAccept(item.email)} className="btn btn-xs text-white btn-success">Accept</button><button onClick={()=>handleReject(item.email)} className="btn btn-xs text-white btn-error">Reject</button></td>
           </tr>)
         }
     </tbody> 

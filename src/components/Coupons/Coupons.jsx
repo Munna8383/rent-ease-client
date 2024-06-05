@@ -7,7 +7,7 @@ const Coupons = () => {
         <div className='w-11/12 mx-auto mt-24'>
 
 <div className='text-center'>
-                <h1 className='text-4xl font-bold text-blue-500'>Grab Our Exciting Offer</h1>
+                <h1 className='text-4xl font-bold text-[#062760]'>Grab Our Exciting Offer</h1>
             </div>
 
             

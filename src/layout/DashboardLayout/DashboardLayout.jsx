@@ -1,6 +1,16 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import useRole from "../../hooks/useRole";
+import { CgProfile } from "react-icons/cg";
+import { MdAttachMoney } from "react-icons/md";
+import { FaHistory } from "react-icons/fa";
+import { TfiAnnouncement } from "react-icons/tfi";
+import { IoSettingsSharp } from "react-icons/io5";
+import { FaRegHandshake } from "react-icons/fa";
+import { RiCoupon2Line } from "react-icons/ri";
+import { IoIosLogOut } from "react-icons/io";
+import { IoHomeOutline } from "react-icons/io5";
+
 
 
 const DashboardLayout = () => {
@@ -23,13 +33,13 @@ const DashboardLayout = () => {
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label> 
 
-    <div className="py-4 w-60 min-h-full bg-slate-700 z-50 text-base-content flex flex-col justify-between">
+    <div className="py-4 w-60 min-h-full bg-[#162334] z-50 text-base-content flex flex-col justify-between">
 
    {
     person?.role==="user"&& <ul className="menu">
     {/* Sidebar content here */}
-    <li><NavLink to={"/dashboard/userProfile"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>User Profile</NavLink></li>
-    <li><NavLink to={"/dashboard/userAnnouncements"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Announcements</NavLink></li>    
+    <li><NavLink to={"/dashboard/userProfile"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}><span><CgProfile></CgProfile></span>User Profile</NavLink></li>
+    <li><NavLink to={"/dashboard/userAnnouncements"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}><span><TfiAnnouncement /></span>Announcements</NavLink></li>    
 
   </ul>
    }
@@ -37,34 +47,35 @@ const DashboardLayout = () => {
     person?.role==="member"&& <ul className="menu">
     {/* Sidebar content here */}
 
-    <li><NavLink to={"/dashboard/memberProfile"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Member Profile</NavLink></li>
-    <li><NavLink to={"/dashboard/makePayment"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Make Payment</NavLink></li>
-    <li><NavLink to={"/dashboard/paymentHistory"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Payment History</NavLink></li>
+    <li><NavLink to={"/dashboard/memberProfile"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}><span><CgProfile></CgProfile></span>Member Profile</NavLink></li>
+    <li><NavLink to={"/dashboard/makePayment"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}><span><MdAttachMoney/></span>Make Payment</NavLink></li>
+    <li><NavLink to={"/dashboard/paymentHistory"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}><span><FaHistory /></span>Payment History</NavLink></li>
 
 
-    <li><NavLink to={"/dashboard/memberAnnouncements"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Announcements</NavLink></li>   
+    <li><NavLink to={"/dashboard/memberAnnouncements"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}><span><TfiAnnouncement /></span>Announcements</NavLink></li>   
   </ul>
    }
    {
     person?.role==="admin"&& <ul className="menu">
 
-<li><NavLink to={"/dashboard/adminProfile"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Admin Profile</NavLink></li>
+<li><NavLink to={"/dashboard/adminProfile"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}><CgProfile></CgProfile>Admin Profile</NavLink></li>
    
-   <li><NavLink to={"/dashboard/manageUsers"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>ManageUsers</NavLink></li>
-   <li><NavLink to={"/dashboard/manageAgreement"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Manage Agreement</NavLink></li>
-   <li><NavLink to={"/dashboard/manageCoupons"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Manage Coupons</NavLink></li>
-   <li><NavLink to={"/dashboard/addAnnouncement"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}>Add Announcement</NavLink></li>
+   <li><NavLink to={"/dashboard/manageUsers"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}><span><IoSettingsSharp /></span>ManageUsers</NavLink></li>
+   <li><NavLink to={"/dashboard/manageAgreement"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}><span><FaRegHandshake /></span>Manage Agreement</NavLink></li>
+   <li><NavLink to={"/dashboard/manageCoupons"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}><span><RiCoupon2Line /></span>Manage Coupons</NavLink></li>
+   <li><NavLink to={"/dashboard/addAnnouncement"} className={({isActive})=>isActive?"font-bold  text-white border-b-2 border-white":"font-bold text-white"}><span><TfiAnnouncement /></span>Add Announcement</NavLink></li>
 
   </ul>
    }
     <div className="space-y-4 text-center text-white font-light">
-        <div className="border-2 border-white py-1 rounded-sm">
-       <h1 className="w-full" > <Link className="w-full" to={"/"}>Home</Link></h1>
+        <div className="border-x border-y border-white py-1 rounded-sm">
+       <Link className="text-2xl" to={"/"}><span ><IoHomeOutline className="w-full"/></span></Link>
 
         </div>
        
-      <div className="border-2 border-white py-1 rounded-sm">
-     <h1 className="w-full" > <button className="w-full" onClick={()=>logout()} >Logout</button></h1>
+      <div className="border-x border-y border-white py-1 rounded-sm">
+    <button className="text-2xl" onClick={()=>logout()} ><span><IoIosLogOut />
+</span></button>
       </div>
     </div>
 

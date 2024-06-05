@@ -87,7 +87,7 @@ const Apartment = () => {
             <Toaster></Toaster>
 
 <div className='text-center'>
-                <h1 className='text-4xl font-bold text-blue-500'>Explore Our Apartments</h1>
+                <h1 className='text-4xl font-bold text-[#062760]'>Explore Our Apartments</h1>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
