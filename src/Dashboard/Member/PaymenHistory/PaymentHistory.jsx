@@ -33,16 +33,7 @@ const PaymentHistory = () => {
         })
 
 
-
-
-
-
     },[axiosSecure,user?.email,searchText])
-
-
-    
-
-
 
 
 

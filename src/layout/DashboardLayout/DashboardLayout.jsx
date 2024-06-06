@@ -33,7 +33,7 @@ const DashboardLayout = () => {
   <div className="drawer-side">
     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label> 
 
-    <div className="py-4 w-60 min-h-full bg-[#162334] z-50 text-base-content flex flex-col justify-between">
+    <div className="py-4 w-60 min-h-full bg-emerald-800 z-50 text-base-content flex flex-col justify-between">
 
    {
     person?.role==="user"&& <ul className="menu">
