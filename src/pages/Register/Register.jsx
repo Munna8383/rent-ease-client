@@ -6,6 +6,11 @@ import useAuth from "../../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+
+const image_key = "882b09b883bdb9615d409ad402b4f806"
+const api = `https://api.imgbb.com/1/upload?key=${image_key}`
+
+
 const Register = () => {
     const {createUser,updatePhotoAndName,logout}=useAuth()
     const navigate = useNavigate()
@@ -16,51 +21,111 @@ const Register = () => {
         formState: { errors },
     } = useForm()
 
-    const onSubmit = (data) => {
+    const onSubmit = async(data) => {
         console.log(data)
 
-        const email = data.email
-        const password= data.password
-        const name=data.name
-        const photo = data.photo
+        // const email = data.email
+        // const password= data.password
+        // const name=data.name
+        // const photo = data.photo
+
+
+       
+        const imageFile = {image:data.image[0]}
+
+        const res= await axiosPublic.post(api,imageFile,{
+             headers:{
+                 "Content-Type":"multipart/form-data"
+             }
+         })
+ 
+         if(res.data.success){
+
+           const email = data.email
+           const password= data.password
+           const name=data.name
+           const photo = res.data.data.display_url
+
+
+           createUser(email,password)
+           .then(()=>{
+               updatePhotoAndName(name,photo)
+               .then(()=>{
+   
+                   const userInfo = {
+                       name:data.name,
+                       email:data.email,
+                       role:"user"
+                   }
+   
+                   axiosPublic.post("/user",userInfo)
+                   .then(res=>{
+                       if(res.data.insertedId){
+   
+                           toast.success('Registered Successfully')
+                   logout()
+   
+   
+                   setTimeout(()=>{
+                          navigate("/login")
+                          
+                   },1000)
+   
+                           
+                       }
+                   })
+   
+   
+   
+   
+   
+                   
+               })
+           })
+
+
+
+
+
+         }
 
 
         
-        createUser(email,password)
-        .then(()=>{
-            updatePhotoAndName(name,photo)
-            .then(()=>{
+        // createUser(email,password)
+        // .then(()=>{
+        //     updatePhotoAndName(name,photo)
+        //     .then(()=>{
 
-                const userInfo = {
-                    name:data.name,
-                    email:data.email,
-                    role:"user"
-                }
+        //         const userInfo = {
+        //             name:data.name,
+        //             email:data.email,
+        //             role:"user"
+        //         }
 
-                axiosPublic.post("/user",userInfo)
-                .then(res=>{
-                    if(res.data.insertedId){
+        //         axiosPublic.post("/user",userInfo)
+        //         .then(res=>{
+        //             if(res.data.insertedId){
 
-                        toast.success('Registered Successfully')
-                logout()
+        //                 toast.success('Registered Successfully')
+        //         logout()
 
 
-                setTimeout(()=>{
-                       navigate("/login")
+        //         setTimeout(()=>{
+        //                navigate("/login")
                        
-                },2000)
+        //         },2000)
 
                         
-                    }
-                })
+        //             }
+        //         })
 
 
 
 
 
                 
-            })
-        })
+        //     })
+        // })
 
 
 
@@ -102,12 +167,18 @@ const Register = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Photo URL</span>
+                                <span className="label-text">Your Photo</span>
                             </label>
-                            <input type="text" className="input input-bordered" placeholder="Your Name" {...register("photo", {
+                            {/* <input type="text" className="input input-bordered" placeholder="Your Name" {...register("photo", {
                                 required: {
                                     value: true,
                                     message: "This field is required"
+                                }
+                            })} /> */}
+                            <input type="file" className="file-input file-input-bordered w-full" {...register("image",{
+                                required:{
+                                    value:true,
+                                    message:"this field required"
                                 }
                             })} />
 
