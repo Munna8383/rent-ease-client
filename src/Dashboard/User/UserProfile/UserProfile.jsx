@@ -21,6 +21,11 @@ const UserProfile = () => {
   <div className="card-body items-center text-center">
     <h2 className="card-title">{user?.displayName}</h2>
     <p className="text-lg">Email: {user?.email}</p>
+    <p className="text-lg">Agreement Accept Date: None</p>
+    <p className="text-lg">Apartment Info: None</p>
+    <p className="text-lg">Floor: None</p>
+    <p className="text-lg">Block Number: None</p>
+    <p className="text-lg">Room Number: None</p>
     
   </div>
 </div>
