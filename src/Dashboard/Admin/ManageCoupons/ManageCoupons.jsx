@@ -16,7 +16,24 @@ const ManageCoupons = () => {
     const [coupons,refetch,isLoading]= useCoupon()
 
 
-  
+  const handleDelete=(id)=>{
+
+    axiosSecure.delete(`/deleteCoupon/${id}`)
+    .then(res=>{
+
+        if(res.data.deletedCount===1){
+
+            toast.success("deleted successfully")
+            refetch()
+        }
+
+
+
+    })
+
+
+
+  }
       
 
     const handleSubmit=e=>{
@@ -42,7 +59,7 @@ const ManageCoupons = () => {
             }
         })
 
-        console.log(validDate)
+        
 
 
 
@@ -57,7 +74,7 @@ const ManageCoupons = () => {
 
             <div className="flex justify-center">
                 <div>
-                    <button className="btn" onClick={() => document.getElementById('my_modal_2').showModal()}>Add Coupons</button>
+                    <button className="btn btn-active" onClick={() => document.getElementById('my_modal_2').showModal()}>Add Coupons</button>
                     <dialog id="my_modal_2" className="modal">
                         <div className="modal-box">
                             <div className="text-center text-xl font-bold my-3">
@@ -149,7 +166,7 @@ const ManageCoupons = () => {
         <td>{item.percentage}%</td>
         <td>{item.description}</td>
         <td>{item?.validDate}</td>
-        <td><Link className="btn btn-active btn-xs" to={`/dashboard/changeCoupon/${item._id}`}>Change Validity</Link></td>
+        <td><Link className="btn btn-active btn-xs" to={`/dashboard/changeCoupon/${item._id}`}>Change Validity</Link><button onClick={()=>handleDelete(item?._id)} className="ml-2 btn btn-xs btn-error text-white">delete</button></td>
         
       </tr>)
       }

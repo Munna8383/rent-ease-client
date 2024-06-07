@@ -103,7 +103,7 @@ const Apartment = () => {
                         <div className="px-5 pb-5 space-y-2">
                         
                            <div className="text-left text-lg font-bold space-y-2 ">
-                            <h1 className="text-center">{item?.status==="available"?<span className="bg-green-500 px-2 py-1 rounded-xl">{item?.status}</span>:<span className="bg-red-500 px-2 py-1 rounded-xl">{item?.status}</span>}</h1>
+                            <h1 className="text-center">{item?.status==="available"?<span className="bg-green-200 px-2 py-1 rounded-xl">{item?.status}</span>:<span className="bg-red-300 px-2 py-1 rounded-xl">{item?.status}</span>}</h1>
                             <h1  className="text-center">Apartment Number:<span className="text-blue-500">{item.apartment_no}</span></h1>
                             <div className="flex justify-between">
                             <h1>Block Name:<span className="text-blue-500">{item.block_name}</span></h1>

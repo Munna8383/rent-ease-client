@@ -13,7 +13,7 @@ const OurLocation = () => {
             <div>
 
           <div className='mt-10'>
-          <MapContainer center={[24.9020,   91.8806]} zoom={13} style={{ height: "400px", width: "100%" }}>
+          <MapContainer center={[24.9006,91.8812]} zoom={12} style={{ height: "400px", width: "100%"}}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -23,12 +23,12 @@ const OurLocation = () => {
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
       </Marker>
-    </MapContainer>  <MapContainer center={[24.9020,  91.8806]} zoom={5} scrollWheelZoom={false}>
+    </MapContainer>  <MapContainer center={[24.9006,91.8812]} zoom={12} scrollWheelZoom={false}>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                    <Marker position={[24.9020,   91.8806]}>
+                    <Marker position={[24.9006,91.8812]}>
                         <Popup>
                             A pretty CSS3 popup. <br /> Easily customizable.
                         </Popup>
