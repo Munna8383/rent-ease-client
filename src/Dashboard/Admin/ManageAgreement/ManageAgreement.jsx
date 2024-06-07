@@ -26,6 +26,8 @@ const ManageAgreement = () => {
         axiosSecure.put(`/acceptAgreement/${email}`,acceptDate)
         .then(res=>{
 
+          console.log(res.data)
+
             if(res.data.acceptedResult.modifiedCount===1&&res.data.updateUserRole.modifiedCount===1){
                 toast.success("accepted")
                 refetch()

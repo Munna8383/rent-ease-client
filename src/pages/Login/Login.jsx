@@ -4,6 +4,8 @@ import SocialLogin from "../../components/SocialLogin/SocialLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
+import { useState } from "react";
+import {FaEye,FaEyeSlash} from "react-icons/fa"
 
 
 
@@ -14,6 +16,7 @@ const Login = () => {
     const {login}= useAuth()
     const location = useLocation()
     const navigate = useNavigate()
+    const [showPassword,setShowPassword]=useState(false)
 
     const {
         register,
@@ -74,16 +77,21 @@ const Login = () => {
 
                                 {errors.email && <span className="text-red-900 ml-2">{errors.email.message}</span>}
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" className="input input-bordered" placeholder="Email" {...register("password", {
+                                <input type={showPassword? "text":"password"} className="input input-bordered" placeholder="Email" {...register("password", {
                                     required: {
                                         value: true,
                                         message: "This field is required"
                                     }
                                 })} />
+                                 <span className="absolute bottom-4  right-10" onClick={()=>setShowPassword(!showPassword)}>
+                            {
+                                showPassword? <FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>
+                            }
+                        </span>
 
                                 {errors.password && <span className="text-red-900 ml-2">{errors.password.message}</span>}
                             </div>

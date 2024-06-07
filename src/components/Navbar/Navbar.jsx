@@ -40,7 +40,7 @@ const Navbar = () => {
     </div>
    <div className="flex items-center">
    <h1> <Lottie  className="h-[70px] w-[100px]" animationData={animationData} loop={true} /></h1>
-    <h1 className="text-3xl font-bold">Rent<span className="text-blue-500">Ease</span></h1>
+    <h1 className="text-3xl font-bold hidden sm:block">Rent<span className="text-blue-500">Ease</span></h1>
    </div>
   </div>
   <div className="navbar-center hidden lg:flex">

@@ -20,7 +20,7 @@ const MemberProfile = () => {
                 <div>
 
 
-                <img className="rounded-xl w-[450px] mx-auto" src={user.photoURL} alt="Shoes" />
+                <img className="rounded-xl h-[300px] w-[450px] mx-auto" src={user.photoURL} alt="Shoes" />
 
 
 

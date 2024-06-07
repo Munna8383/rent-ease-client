@@ -7,12 +7,15 @@ import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 
+
+
 const image_key = "882b09b883bdb9615d409ad402b4f806"
 const api = `https://api.imgbb.com/1/upload?key=${image_key}`
 
 
 const Register = () => {
     const {createUser,updatePhotoAndName,logout}=useAuth()
+   
     const navigate = useNavigate()
     const axiosPublic = useAxiosPublic()
     const {
@@ -197,7 +200,7 @@ const Register = () => {
 
                             {errors.email && <span className="text-red-900 ml-2">{errors.email.message}</span>}
                         </div>
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
@@ -215,6 +218,8 @@ const Register = () => {
                                     message:"Minimum one capital letter and a number"
                                 }
                             })} />
+                           
+
 
                             {errors.password && <span className="text-red-900 ml-2">{errors.password.message}</span>}
                         </div>

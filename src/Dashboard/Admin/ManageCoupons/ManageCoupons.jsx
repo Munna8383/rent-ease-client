@@ -149,7 +149,7 @@ const ManageCoupons = () => {
         <td>{item.percentage}%</td>
         <td>{item.description}</td>
         <td>{item?.validDate}</td>
-        <td><Link to={`/dashboard/changeCoupon/${item._id}`}>Change Validity</Link></td>
+        <td><Link className="btn btn-active btn-xs" to={`/dashboard/changeCoupon/${item._id}`}>Change Validity</Link></td>
         
       </tr>)
       }

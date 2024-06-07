@@ -103,6 +103,7 @@ const Apartment = () => {
                         <div className="px-5 pb-5 space-y-2">
                         
                            <div className="text-left text-lg font-bold space-y-2 ">
+                            <h1 className="text-center">{item?.status==="available"?<span className="bg-green-500 px-2 py-1 rounded-xl">{item?.status}</span>:<span className="bg-red-500 px-2 py-1 rounded-xl">{item?.status}</span>}</h1>
                             <h1  className="text-center">Apartment Number:<span className="text-blue-500">{item.apartment_no}</span></h1>
                             <div className="flex justify-between">
                             <h1>Block Name:<span className="text-blue-500">{item.block_name}</span></h1>
@@ -113,7 +114,7 @@ const Apartment = () => {
                             
                             <div className="flex items-center justify-between">
                                 <span className="text-3xl font-bold text-gray-900 dark:text-white">${item.rent}</span>
-                                <button disabled={MyApartment || person.role=="admin"} onClick={()=>handleAgreement(item)} className="text-white  mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 font-bold text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agreement</button>
+                                <button disabled={MyApartment || person?.role=="admin" || item?.status==="unavailable"} onClick={()=>handleAgreement(item)} className="text-white  mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 font-bold text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agreement</button>
                             </div>
                         </div>
                     </div>
