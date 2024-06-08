@@ -22,6 +22,7 @@ import MakePayment from "../Dashboard/Member/MakePayment/MakePayment";
 import PaymentHistory from "../Dashboard/Member/PaymenHistory/PaymentHistory";
 import ChangeValidity from "../Dashboard/Admin/ManageCoupons/ChangeValidity";
 import PaymentPage from "../Dashboard/Member/PaymentPage/PaymentPage";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -38,7 +39,7 @@ import PaymentPage from "../Dashboard/Member/PaymentPage/PaymentPage";
         {
           path:"/apartment",
           element:<PrivateRoute><Apartment></Apartment></PrivateRoute>,
-          loader: ()=> fetch("http://localhost:5000/apartmentCount")
+          loader: ()=> fetch("https://rent-ease-server.vercel.app/apartmentCount")
         },
         {
           path:"/login",
@@ -64,28 +65,28 @@ import PaymentPage from "../Dashboard/Member/PaymentPage/PaymentPage";
         // Admin Routes
         {
           path:"adminProfile",
-          element:<AdminProfile></AdminProfile>
+          element:<AdminRoute><AdminProfile></AdminProfile></AdminRoute>
         },
         {
           path:"manageUsers",
-          element:<ManageUsers></ManageUsers>
+          element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
         },
         {
           path:"addAnnouncement",
-          element:<AddAnnouncement></AddAnnouncement>
+          element:<AdminRoute><AddAnnouncement></AddAnnouncement></AdminRoute>
         },
         {
           path:"manageCoupons",
-          element:<ManageCoupons></ManageCoupons>
+          element:<AdminRoute><ManageCoupons></ManageCoupons></AdminRoute>
         },
         {
           path:"changeCoupon/:id",
-          element:<ChangeValidity></ChangeValidity>
+          element:<AdminRoute><ChangeValidity></ChangeValidity></AdminRoute>
 
         },
         {
           path:"manageAgreement",
-          element:<ManageAgreement></ManageAgreement>
+          element:<AdminRoute><ManageAgreement></ManageAgreement></AdminRoute>
         },
         // user routes
         {
