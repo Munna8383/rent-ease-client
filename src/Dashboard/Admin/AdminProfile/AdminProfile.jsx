@@ -35,10 +35,10 @@ const AdminProfile = () => {
 
       
    
-   
+    
 
-    const data1 = [{name:"Total Room",value:data?.totalRoom},{name:"Available Room",value:data?.availableRoom}]
-    const data2 = [{name:"Total Room",value:data?.totalRoom},{name:"Unavailable Room",value:data?.unavailableRoom}]
+    const data1 = [{name:"Available Room",value:data?.availableRoom},{name:"Unavailable Room",value:data?.unavailableRoom}]
+   
 
 
     const COLORS = ['#0088FE', '#FF8042'];
@@ -64,7 +64,7 @@ const AdminProfile = () => {
 
 
             <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
-             <div className="flex items-center space-x-2 shadow-2xl bg-slate-300  rounded-xl w-64 lg:w-72 h-32">
+             <div className="flex items-center space-x-2 shadow-2xl bg-slate-300  rounded-xl w-64 mx-auto lg:w-72 h-32">
 
                 <div>
                <img className="h-32" src={user?.photoURL} alt="" />
@@ -77,7 +77,7 @@ const AdminProfile = () => {
                 </div>
 
              </div>
-             <div className="flex gap-3 items-center justify-center bg-red-300 p-5 rounded-xl w-64 lg:w-72 h-32">
+             <div className="flex gap-3 items-center justify-center bg-red-300 p-5 rounded-xl w-64 mx-auto lg:w-72 h-32">
 
                 <div className=" text-center  text-7xl">
                 <MdHouse />
@@ -90,7 +90,7 @@ const AdminProfile = () => {
                 </div>
 
              </div>
-             <div className="flex gap-3 items-center justify-center bg-orange-200 p-5 rounded-xl w-64 lg:w-72 h-32">
+             <div className="flex gap-3 items-center justify-center bg-orange-200 p-5 rounded-xl w-64 mx-auto lg:w-72 h-32">
 
                 <div className=" text-center  text-7xl">
                 <MdEventAvailable />
@@ -103,7 +103,7 @@ const AdminProfile = () => {
                 </div>
 
              </div>
-             <div className="flex gap-3 items-center justify-center bg-lime-300 p-5 rounded-xl w-64 lg:w-72 h-32">
+             <div className="flex gap-3 items-center justify-center bg-lime-300 p-5 rounded-xl w-64 mx-auto lg:w-72 h-32">
 
                 <div className=" text-center  text-7xl">
                 <CgUnavailable />
@@ -116,7 +116,7 @@ const AdminProfile = () => {
                 </div>
 
              </div>
-             <div className="flex gap-3 items-center justify-center bg-indigo-300 p-5 rounded-xl w-64 lg:w-72 h-32">
+             <div className="flex gap-3 items-center justify-center bg-indigo-300 p-5 rounded-xl w-64 mx-auto lg:w-72 h-32">
 
                 <div className=" text-center  text-7xl">
                 <FaUser />
@@ -129,7 +129,7 @@ const AdminProfile = () => {
                 </div>
 
              </div>
-             <div className="flex gap-3 items-center justify-center bg-fuchsia-300 p-5 rounded-xl w-64 lg:w-72 h-32">
+             <div className="flex gap-3 items-center justify-center bg-fuchsia-300 p-5 rounded-xl w-64 mx-auto lg:w-72 h-32">
 
                 <div className="h-50 text-center  text-7xl">
                 <FaUserCheck />
@@ -146,7 +146,7 @@ const AdminProfile = () => {
 
 
 
-          <div className=" md:hidden lg:flex justify-between">
+          <div className="flex justify-center">
           <div>
             <PieChart width={400} height={270}>
                         <Pie
@@ -166,25 +166,7 @@ const AdminProfile = () => {
                         <Legend></Legend>
                     </PieChart>
             </div>
-            <div>
-            <PieChart width={400} height={270}>
-                        <Pie
-                            data={data2}
-                            cx="50%"
-                            cy="50%"
-                            labelLine={false}
-                            label={renderCustomizedLabel}
-                            outerRadius={80}
-                            fill="#8884d8"
-                            dataKey="value"
-                        >
-                            {data2?.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                            ))}
-                        </Pie>
-                        <Legend></Legend>
-                    </PieChart>
-            </div>
+           
           </div>
 
 

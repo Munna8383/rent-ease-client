@@ -1,8 +1,32 @@
-# React + Vite
+# Rent Ease
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A rental website where people can rent apartment.
 
-Currently, two official plugins are available:
+## Assignment Variant:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Assignment12_category_0012
+
+
+
+
+*Netlify Live Website:* [https://rentease34.netlify.app/](https://rentease34.netlify.app/)
+*Firebase Live Website:* [https://rent-ease-2de9a.web.app/](https://rent-ease-2de9a.web.app/)
+
+
+## Features
+
+- Jwt Authorization.
+- Admin Dashboard.
+- Payment System.
+- Private and Protected route system.
+- Responsive website.
+
+## NPM Packages
+
+1.React helmet Async.
+2.Swiper Slider
+3.Lottie React
+4.React Leaflet
+5.React-icon
+6.React hot toast
+7.Recat datepicker

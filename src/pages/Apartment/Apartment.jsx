@@ -96,10 +96,10 @@ const Apartment = () => {
             <Helmet>
                 <title>Apartments || Rent Ease</title>
             </Helmet>
-
+             {!isLoading&&
 <div className='text-center'>
                 <h1 className='text-4xl font-bold text-[#062760]'>Explore Our Apartments</h1>
-            </div>
+            </div>}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
                 {

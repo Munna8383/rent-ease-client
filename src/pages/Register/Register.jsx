@@ -137,7 +137,7 @@ const Register = () => {
 
     }
     return (
-        <div className="p-20 w-11/12 mx-auto">
+        <div className="pt-20 px-5 w-11/12 mx-auto">
             <Toaster></Toaster>
             <Helmet>
                 <title>Register || Rent Ease</title>
@@ -153,7 +153,7 @@ const Register = () => {
             </div>
 
 
-            <div className="w-full h-[600px] lg:w-1/2 px-5">
+            <div className="w-full h-[600px] lg:w-1/2 px-5 pt-5">
                 <div className='text-center mt-5'>
                     <h1 className='text-3xl font-bold text-black'>Sign Up</h1>
                 </div>

@@ -38,7 +38,7 @@ const ManageUsers = () => {
 
             <div>
 
-            <table className="table w-auto mx-auto">
+            <table className="table w-1/3 z-10 lg:w-9/12 mx-auto">
     {/* head */}
     <thead>
       <tr  className="border-2 border-black" >

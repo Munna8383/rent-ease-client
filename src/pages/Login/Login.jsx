@@ -46,7 +46,7 @@ const Login = () => {
 
     }
     return (
-        <div className="p-20 w-11/12 mx-auto">
+        <div className="pt-20 px-5 w-11/12 mx-auto">
              <Toaster></Toaster>
              <Helmet>
                 <title>Login || Rent Ease</title>
@@ -68,7 +68,7 @@ const Login = () => {
                     </div>
                     <div>
                         <form className="space-y-2 lg:space-y-5 w-full mt-10" onSubmit={handleSubmit(onSubmit)}>
-                            <div className="form-control">
+                            <div className="form-control w-full">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
@@ -81,7 +81,7 @@ const Login = () => {
 
                                 {errors.email && <span className="text-red-900 ml-2">{errors.email.message}</span>}
                             </div>
-                            <div className="form-control relative">
+                            <div className="form-control w-full relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
