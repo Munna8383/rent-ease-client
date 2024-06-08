@@ -6,6 +6,7 @@ import useAuth from "../../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
 import {FaEye,FaEyeSlash} from "react-icons/fa"
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -47,6 +48,9 @@ const Login = () => {
     return (
         <div className="p-20 w-11/12 mx-auto">
              <Toaster></Toaster>
+             <Helmet>
+                <title>Login || Rent Ease</title>
+            </Helmet>
 
 
             <div className=" lg:flex mt-10 bg-gray-200 shadow-2xl">

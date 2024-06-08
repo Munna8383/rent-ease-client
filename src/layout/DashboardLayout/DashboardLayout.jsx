@@ -10,6 +10,7 @@ import { FaRegHandshake } from "react-icons/fa";
 import { RiCoupon2Line } from "react-icons/ri";
 import { IoIosLogOut } from "react-icons/io";
 import { IoHomeOutline } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -22,6 +23,9 @@ const DashboardLayout = () => {
 
     return (
         <div className="flex gap-5">
+           <Helmet>
+                <title>Dashboard || Rent Ease</title>
+            </Helmet>
 
 <div className="w-60 drawer md:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />

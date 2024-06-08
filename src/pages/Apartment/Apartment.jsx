@@ -7,6 +7,7 @@ import moment from "moment";
 import toast, { Toaster } from "react-hot-toast";
 import useMyApartment from "../../hooks/useMyApartment";
 import useRole from "../../hooks/useRole";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -24,7 +25,7 @@ const Apartment = () => {
     const {person}=useRole()
 
 
-    
+
 
    
 
@@ -92,6 +93,9 @@ const Apartment = () => {
                 isLoading&&<div className="min-h-screen flex justify-center items-center"><span className="loading loading-bars loading-lg"></span></div>
             }
             <Toaster></Toaster>
+            <Helmet>
+                <title>Apartments || Rent Ease</title>
+            </Helmet>
 
 <div className='text-center'>
                 <h1 className='text-4xl font-bold text-[#062760]'>Explore Our Apartments</h1>

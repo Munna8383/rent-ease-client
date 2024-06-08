@@ -6,6 +6,7 @@ import useAuth from "../../hooks/useAuth";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -138,6 +139,9 @@ const Register = () => {
     return (
         <div className="p-20 w-11/12 mx-auto">
             <Toaster></Toaster>
+            <Helmet>
+                <title>Register || Rent Ease</title>
+            </Helmet>
 
 
         <div className=" lg:flex items-center mt-10 bg-gray-200 shadow-2xl">
