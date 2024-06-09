@@ -85,7 +85,7 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type={showPassword? "text":"password"} className="input input-bordered" placeholder="Email" {...register("password", {
+                                <input type={showPassword? "text":"password"} className="input input-bordered" placeholder="Password" {...register("password", {
                                     required: {
                                         value: true,
                                         message: "This field is required"
