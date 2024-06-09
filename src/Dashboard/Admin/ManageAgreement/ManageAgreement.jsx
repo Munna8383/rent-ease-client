@@ -65,8 +65,7 @@ const ManageAgreement = () => {
 
             
 
-<div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-10">
-<div className="overflow-auto rounded-lg shadow-xl">
+            <div className="overflow-auto rounded-lg shadow-xl mt-10">
   <table className="w-full">
     <thead className="bg-gray-50 border-2 border-gray-200">
       <tr>
@@ -96,7 +95,6 @@ const ManageAgreement = () => {
         }
     </tbody> 
   </table>
-</div>
 </div>
 
 
