@@ -66,32 +66,32 @@ const ManageAgreement = () => {
             
 
 <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-10">
-<div className="overflow-x-auto">
-  <table className="table table-xs">
-    <thead>
+<div className="overflow-auto rounded-lg shadow-xl">
+  <table className="w-full">
+    <thead className="bg-gray-50 border-2 border-gray-200">
       <tr>
-        <th></th> 
-        <th>Name</th> 
-        <th>Email</th> 
-        <th>Floor</th> 
-        <th>Block</th> 
-        <th>Rent</th> 
-        <th>Request Date</th>
-        <th>Action</th>
+        <th className="p-3 text-sm font-semibold tracking-wide text-left"></th> 
+        <th className="p-3 text-sm font-semibold tracking-wide text-left">Name</th> 
+        <th className="p-3 text-sm font-semibold tracking-wide text-left">Email</th> 
+        <th className="p-3 text-sm font-semibold tracking-wide text-left">Floor</th> 
+        <th className="p-3 text-sm font-semibold tracking-wide text-left">Block</th> 
+        <th className="p-3 text-sm font-semibold tracking-wide text-left">Rent</th> 
+        <th className="p-3 text-sm font-semibold tracking-wide text-left">Request Date</th>
+        <th className="p-3 text-sm font-semibold tracking-wide text-left">Action</th>
       </tr>
     </thead> 
-    <tbody>
+    <tbody className="divide-y divide-gray-100">
 
         {
             pendingApartment?.map((item,index)=>   <tr key={index}>
-            <th>{index+1}</th> 
-            <td>{item.name}</td> 
-            <td>{item.email}</td> 
-            <td>{item.floor}</td> 
-            <td>{item.block}</td> 
-            <td>${item.rent}</td> 
-            <td>{item.requestDate}</td>
-            <td className="flex gap-2"><button onClick={()=>handleAccept(item.email)} className="btn btn-xs text-white btn-success">Accept</button><button onClick={()=>handleReject(item.email)} className="btn btn-xs text-white btn-error">Reject</button></td>
+            <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{index+1}</td> 
+            <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item.name}</td> 
+            <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item.email}</td> 
+            <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item.floor}</td> 
+            <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item.block}</td> 
+            <td className="p-3 text-sm text-gray-700 whitespace-nowrap">${item.rent}</td> 
+            <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item.requestDate}</td>
+            <td className="flex gap-2 p-3 text-sm text-gray-700 whitespace-nowrap "><button onClick={()=>handleAccept(item.email)} className="btn btn-xs text-white btn-success">Accept</button><button onClick={()=>handleReject(item.email)} className="btn btn-xs text-white btn-error">Reject</button></td>
           </tr>)
         }
     </tbody> 

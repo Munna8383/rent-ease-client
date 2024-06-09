@@ -45,7 +45,7 @@ const PaymentHistory = () => {
 
             <div className="flex justify-center mt-10">
                 <form onSubmit={handleSearch}>
-                <input type="text" name="search" placeholder="Search By Month eg:Feb" className="input input-bordered input-info " />
+                <input type="text" name="search" placeholder="Search By Month Eg:Feb" className="input input-bordered input-info " />
                 <button type="submit" className="btn btn-md ml-2 btn-primary">Search</button>
                 </form>
             </div>
@@ -54,26 +54,26 @@ const PaymentHistory = () => {
             <div className="mt-10">
 
 
-            <div className="overflow-x-auto">
-  <table className="table">
+            <div className="overflow-auto rounded-lg shadow-xl">
+  <table className="w-full">
     {/* head */}
-    <thead>
+    <thead className="bg-gray-50 border-2 border-gray-200">
       <tr>
-        <th></th>
-        <th>Rent</th>
-        <th>Date</th>
-        <th>Transaction ID</th>
+        <th  className="p-3 text-sm font-semibold tracking-wide text-left"></th>
+        <th  className="p-3 text-sm font-semibold tracking-wide text-left">Rent</th>
+        <th  className="p-3 text-sm font-semibold tracking-wide text-left">Date</th>
+        <th  className="p-3 text-sm font-semibold tracking-wide text-left">Transaction ID</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody className="divide-y divide-gray-100">
 
         {
 
             data?.map((item,index)=> <tr key={index}>
-            <th>{index+1}</th>
-            <td>{item?.rent}</td>
-            <td>{item?.paymentMonth}</td>
-            <td>{item?.transactionId}</td>
+            <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{index+1}</td>
+            <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item?.rent}</td>
+            <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item?.paymentMonth}</td>
+            <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item?.transactionId}</td>
           </tr>)
         }
       {/* row 1 */}

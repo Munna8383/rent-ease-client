@@ -13,12 +13,24 @@ Assignment12_category_0012
 *Firebase Live Website:* [https://rent-ease-2de9a.web.app/](https://rent-ease-2de9a.web.app/)
 
 
+## Admin Email and Password
+
+Admin Email : munna@gmail.com
+
+password :  Munna8399
+
+
 ## Features
 
 - Jwt Authorization.
 - Admin Dashboard.
 - Payment System.
 - Private and Protected route system.
+-Agreement apartment
+-payment per month
+-get discount using coupon
+-pagination system
+-membership dashboard
 - Responsive website.
 
 ## NPM Packages

@@ -142,31 +142,31 @@ const ManageCoupons = () => {
                     </div>
 
 
-                    <div className="overflow-x-auto ">
-  <table className="table w-auto mx-auto">
+                    <div className="overflow-auto rounded-lg">
+  <table className="w-full">
     {/* head */}
-    <thead>
-      <tr  className="border-2 border-black" >
+    <thead className="bg-gray-50 border-2 border-gray-200">
+      <tr  >
         
-      <th>Code</th>
-        <th>Percentage</th>
+      <th className="p-3 text-sm font-semibold tracking-wide text-left">Code</th>
+        <th className="p-3 text-sm font-semibold tracking-wide text-left">Percentage</th>
         
-        <th>Description</th>
-        <th>Validity</th>
-        <th>Action</th>
+        <th className="p-3 text-sm font-semibold tracking-wide text-left">Description</th>
+        <th className="p-3 text-sm font-semibold tracking-wide text-left">Validity</th>
+        <th className="p-3 text-sm font-semibold tracking-wide text-left">Action</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody className="divide-y divide-gray-100">
       {/* row 1 */}
 
       {
-        coupons?.map((item,index)=> <tr className="border-2 border-black" key={index}>
+        coupons?.map((item,index)=> <tr  key={index}>
         
-        <td>{item.code}</td>
-        <td>{item.percentage}%</td>
-        <td>{item.description}</td>
-        <td>{item?.validDate}</td>
-        <td><Link className="btn btn-active btn-xs" to={`/dashboard/changeCoupon/${item._id}`}>Change Validity</Link><button onClick={()=>handleDelete(item?._id)} className="ml-2 btn btn-xs btn-error text-white">delete</button></td>
+        <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item.code}</td>
+        <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item.percentage}%</td>
+        <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item.description}</td>
+        <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item?.validDate}</td>
+        <td className="p-3 text-sm text-gray-700 whitespace-nowrap"><Link className="btn btn-active btn-xs" to={`/dashboard/changeCoupon/${item._id}`}>Change Validity</Link><button onClick={()=>handleDelete(item?._id)} className="ml-2 btn btn-xs btn-error text-white">delete</button></td>
         
       </tr>)
       }

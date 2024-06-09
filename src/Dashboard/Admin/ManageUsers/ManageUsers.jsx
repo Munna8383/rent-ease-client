@@ -36,27 +36,27 @@ const ManageUsers = () => {
             </div>
 
 
-            <div>
+            <div className="overflow-auto rounded-lg shadow-lg">
 
-            <table className="table w-1/3 z-10 lg:w-9/12 mx-auto">
+            <table className="w-full">
     {/* head */}
-    <thead>
-      <tr  className="border-2 border-black" >
-        <th>Name</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Action</th>
+    <thead className="bg-gray-50 border-2 border-gray-200">
+      <tr>
+        <th className="p-3 text-sm font-semibold tracking-wide text-left">Name</th>
+        <th  className="p-3 text-sm font-semibold tracking-wide text-left">Email</th>
+        <th  className="p-3 text-sm font-semibold tracking-wide text-left">Role</th>
+        <th  className="p-3 text-sm font-semibold tracking-wide text-left">Action</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody className="divide-y divide-gray-100">
       {/* row 1 */}
 
       {
-        users.map((item,index)=> <tr className="border-2 border-black" key={index}>
-        <th>{item.name}</th>
-        <td>{item.email}</td>
-        <td>{item.role}</td>
-        {item.role==="member"?<td><button onClick={()=>handleChangeMemberRole(item._id)} className="btn btn-xs text-white btn-error">Remove</button></td>:<td>{item.role}</td>}
+        users.map((item,index)=> <tr className="" key={index}>
+        <td className="p-3 text-sm text-gray-700 whitespace-nowrap">{item.name}</td>
+        <td  className="p-3 text-sm text-gray-700 whitespace-normal">{item.email}</td>
+        <td  className="p-3 text-sm text-gray-700 whitespace-nowrap">{item.role}</td>
+        {item.role==="member"?<td  className="p-3 text-sm text-gray-700 whitespace-nowrap"><button onClick={()=>handleChangeMemberRole(item._id)} className="btn btn-xs text-white btn-error">Remove</button></td>:<td  className="p-3 text-sm text-gray-700 whitespace-nowrap">{item.role}</td>}
 
       </tr>)
       }
