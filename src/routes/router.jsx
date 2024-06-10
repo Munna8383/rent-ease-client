@@ -23,6 +23,7 @@ import PaymentHistory from "../Dashboard/Member/PaymenHistory/PaymentHistory";
 import ChangeValidity from "../Dashboard/Admin/ManageCoupons/ChangeValidity";
 import PaymentPage from "../Dashboard/Member/PaymentPage/PaymentPage";
 import AdminRoute from "./AdminRoute";
+import MemberRoute from "./MemberRoute";
 
 
 
@@ -100,23 +101,23 @@ import AdminRoute from "./AdminRoute";
         // member routes
         {
           path:"memberProfile",
-          element:<MemberProfile></MemberProfile>
+          element:<MemberRoute><MemberProfile></MemberProfile></MemberRoute>
         },
         {
           path:"makePayment",
-          element:<MakePayment></MakePayment>
+          element:<MemberRoute><MakePayment></MakePayment></MemberRoute>
         },
         {
           path:"memberAnnouncements",
-          element:<Announcement></Announcement>
+          element:<MemberRoute><Announcement></Announcement></MemberRoute>
         },
         {
           path:"paymentHistory",
-          element:<PaymentHistory></PaymentHistory>
+          element:<MemberRoute><PaymentHistory></PaymentHistory></MemberRoute>
         },
         {
           path:"paymentPage",
-          element:<PaymentPage></PaymentPage>
+          element:<MemberRoute><PaymentPage></PaymentPage></MemberRoute>
         }
       ]
     }
