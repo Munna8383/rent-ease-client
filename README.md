@@ -2,10 +2,8 @@
 
 A rental website where people can rent apartment.
 
-## Assignment Variant:
-
-Assignment12_category_0012
-
+## Project Overview:
+It is an apartment rental website where a user can request to rent an apartment. If the admin accepts the request, the user becomes a member. After becoming a member, they can pay monthly rent and access some extra features.
 
 
 
@@ -33,12 +31,13 @@ password :  Munna8399
 -membership dashboard
 - Responsive website.
 
-## NPM Packages
+## Techonlogy Used
+HTML,CSS,TAILWIND CSS, JAVASCRIT,REACT,Firebase,Jwt,EXPRESSJS,MONGODB
 
-1.React helmet Async.
-2.Swiper Slider
-3.Lottie React
-4.React Leaflet
-5.React-icon
-6.React hot toast
-7.Recat datepicker
+## Steps to run project localy
+- Clone the project
+- Open in vs code
+- open terminal and write npm i
+- replace firebase credentials
+- change the api's with localhost
+- npm run dev to run projec
