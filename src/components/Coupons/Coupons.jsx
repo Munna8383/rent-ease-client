@@ -18,7 +18,7 @@ const Coupons = () => {
 
 <div className="grid grid-cols-1 sm:grid-cols-2 gap-16">
     {
-        coupons?.map((item,index)=><div  data-aos="zoom-in" data-aos-duration="500" key={index} className="container mx-auto mt-10">
+        coupons?.map((item,index)=><div key={index} className="container mx-auto mt-10">
         <div className="bg-gradient-to-br from-blue-900 border-t-yellow-600 text-white text-center py-10 px-20 rounded-lg shadow-md relative">
             <img src="https://i.imghippo.com/files/5XMiJ1725286055.jpg" className="w-20 mx-auto mb-4 rounded-lg"/>
             <h3 className="text-2xl font-semibold mb-4">{item?.description}</h3>

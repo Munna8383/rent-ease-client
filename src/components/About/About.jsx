@@ -11,7 +11,7 @@ const About = () => {
 		<div className="grid gap-5 grid-cols-2 items-center mt-10">
 
 
-		<div data-aos="zoom-in-left" className="space-y-2 sm:space-y-5" >
+		<div className="space-y-2 sm:space-y-5" >
 
 <h4 className="text-base sm:text-2xl lg:text-3xl font-semibold">Spacious Floor Plans</h4>
 <p className="sm:mt-2">Our apartments feature roomy layouts, offering ample space for comfortable living and accommodating all your furniture and personal belongings with ease.</p>
@@ -30,14 +30,14 @@ const About = () => {
 </div>
 
 
-<div  data-aos="zoom-in-right" className="space-y-2 sm:space-y-5">
+<div className="space-y-2 sm:space-y-5">
 
 <h4 className="text-base sm:text-2xl lg:text-3xl font-semibold">Modern Kitchen</h4>
 <p className="sm:mt-2">Enjoy a sleek, contemporary kitchen with top-of-the-line appliances, ample counter space, and stylish cabinetry, perfect for all your cooking needs.</p>
 
 </div>
 
-<div  data-aos="zoom-in-left" className="space-y-2 sm:space-y-5">
+<div className="space-y-2 sm:space-y-5">
 
 <h4 className="text-base sm:text-2xl lg:text-3xl font-semibold">Pet-Friendly Environment</h4>
 <p className="sm:mt-2">We welcome your furry friends with open arms, offering pet-friendly amenities and a community that loves pets as much as you do.</p>
