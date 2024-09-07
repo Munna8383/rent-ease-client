@@ -57,7 +57,7 @@ const ChangeValidity = () => {
 
             
             <div className='text-center'>
-                <h1 className='text-4xl font-bold text-[#062760]'>Change Validity</h1>
+                <h1 className='text-3xl font-bold text-gray-500 '>Change Validity</h1>
             </div>
 
             <div>

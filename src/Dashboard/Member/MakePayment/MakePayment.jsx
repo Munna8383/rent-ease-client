@@ -36,7 +36,7 @@ const MakePayment = () => {
             <div>
 
                 <div className='text-center'>
-                <h1 className='text-2xl lg:text-4xl font-bold text-[#062760]'>Make Payment</h1>
+                <h1 className='text-3xl font-bold text-gray-500 '>Make Payment</h1>
             </div>
 
             <div className="card w-full lg:w-2/4 mx-auto bg-base-300 shadow-xl mt- 5 flex justify-center p-5 mt-5">

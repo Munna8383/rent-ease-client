@@ -39,7 +39,7 @@ import MemberRoute from "./MemberRoute";
         },
         {
           path:"/apartment",
-          element:<PrivateRoute><Apartment></Apartment></PrivateRoute>,
+          element:<Apartment></Apartment>,
           loader: ()=> fetch("https://rent-ease-server.vercel.app/apartmentCount")
         },
         {

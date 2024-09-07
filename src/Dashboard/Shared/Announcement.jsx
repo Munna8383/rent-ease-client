@@ -26,7 +26,7 @@ const Announcement = () => {
     return (
         <div className="space-y-5">
             <div className='text-center'>
-                <h1 className='text-2xl lg:text-4xl font-bold text-[#062760]'>Announcement</h1>
+                <h1 className='text-3xl font-bold text-gray-500 '>Announcement</h1>
             </div>
 
 
@@ -34,7 +34,7 @@ const Announcement = () => {
 
                 <div className="flex justify-center">
 
-                <img className="w-40 h-[150px]" src="https://i.ibb.co/2Zkhp8Y/loudspeaker-1459128-640.png"/>
+                <img className="w-40 h-[150px]" src="https://i.imghippo.com/files/X2QeT1725256334.png"/>
 
 
                 </div>

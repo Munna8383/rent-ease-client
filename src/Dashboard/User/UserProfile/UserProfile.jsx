@@ -7,7 +7,7 @@ const UserProfile = () => {
 
         
 <div className='text-center mt-10'>
-                <h1 className='text-2xl lg:text-4xl font-bold text-[#062760]'>User Profile</h1>
+                <h1 className='text-3xl font-bold text-gray-500 '>User Profile</h1>
             </div>
 
 

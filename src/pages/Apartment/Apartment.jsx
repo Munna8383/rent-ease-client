@@ -16,7 +16,7 @@ const Apartment = () => {
     const axiosSecure = useAxiosSecure()
     const {count} = useLoaderData()
     const [currentPage,setCurrentPage]=useState(0)
-    const itemPerPage = 6
+    const itemPerPage = 9
     const numberOfPage = Math.ceil(count/itemPerPage)
 
     const pages = [...Array(numberOfPage).keys()]
@@ -98,30 +98,31 @@ const Apartment = () => {
             </Helmet>
              {!isLoading&&
 <div className='text-center'>
-                <h1 className='text-4xl font-bold text-[#062760]'>Explore Our Apartments</h1>
+                <h1 className='text-3xl font-bold text-gray-500 mt-5'>Explore Our Apartments</h1>
             </div>}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
                 {
-                    apartment.map((item,index)=><div key={index} className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    apartment.map((item,index)=><div  data-aos="zoom-in" key={index} className="w-full relative  border border-gray-200 rounded-lg shadow  dark:border-gray-700">
                     
-                            <img className="p-8 h-[300px] w-full rounded-t-lg" src={item.apartment_image} alt="product image" />
+                            <img className="p-8 h-[280px] w-full rounded-t-lg opacity-90" src={item.apartment_image} alt="product image" />
+                            <h1 className="text-center absolute top-10 left-10">{item?.status==="available"?<span className="bg-green-200 px-2 py-1 rounded-md">{item?.status}</span>:<span className="bg-red-300 px-2 py-1 rounded-md">{item?.status}</span>}</h1>
                         
                         <div className="px-5 pb-5 space-y-2">
                         
-                           <div className="text-left text-lg font-bold space-y-2 ">
-                            <h1 className="text-center">{item?.status==="available"?<span className="bg-green-200 px-2 py-1 rounded-xl">{item?.status}</span>:<span className="bg-red-300 px-2 py-1 rounded-xl">{item?.status}</span>}</h1>
+                           <div className="text-left text-base font-semibold space-y-2 ">
+                           
                             <h1  className="text-center">Apartment Number:<span className="text-blue-500">{item.apartment_no}</span></h1>
-                            <div className="flex justify-between">
+                            <div className="flex justify-around sm:justify-between mt-5">
                             <h1>Block Name:<span className="text-blue-500">{item.block_name}</span></h1>
                             <h1>Floor Number:<span className="text-blue-500">{item.floor_no}</span></h1>
                             </div>
                            </div>
                             
                             
-                            <div className="flex items-center justify-between">
-                                <span className="text-3xl font-bold text-gray-900 dark:text-white">${item.rent}</span>
-                                <button disabled={MyApartment || person?.role=="admin" || item?.status==="unavailable"} onClick={()=>handleAgreement(item)} className="text-white  mt-2 bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-5 py-2.5 font-bold text-center dark:bg-blue-500 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agreement</button>
+                            <div className="flex items-center justify-end">
+                                <span className="text-2xl font-bold text-gray-900 dark:text-white absolute right-10 top-9">${item.rent}</span>
+                                <button disabled={MyApartment || person?.role=="admin" || item?.status==="unavailable" || !user} onClick={()=>handleAgreement(item)} className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 text-white font-bold py-2 px-4 rounded shadow-lg hover:from-cyan-600 hover:via-blue-600 hover:to-indigo-700 transition-all duration-300 ease-in-out">Agreement</button>
                             </div>
                         </div>
                     </div>
@@ -129,12 +130,12 @@ const Apartment = () => {
                 }
             </div>
 
-            <div className="flex justify-center space-x-5 mt-5">
-                <button onClick={handlePrevious} className="btn btn-warning">Previous</button>
+            <div className="flex justify-center space-x-5 mt-10">
+                <button onClick={handlePrevious} className="px-5 py-1 rounded-md bg-blue-500 text-white">Previous</button>
                 {
                     pages.map(page=><button onClick={()=>setCurrentPage(page)} className={currentPage===page?" btn-primary btn":"btn btn-accent"} key={page}>{page}</button>)
                 }
-                <button onClick={handleNext} className="btn btn-warning">Next</button>
+                <button onClick={handleNext} className="px-5 py-1 rounded-md bg-blue-500 text-white">Next</button>
             </div>
             
         </div>

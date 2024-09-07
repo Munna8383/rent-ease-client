@@ -10,7 +10,7 @@ const MemberProfile = () => {
         <div>
 
             <div className='text-center'>
-                <h1 className='text-2xl lg:text-4xl font-bold text-[#062760]'>Member Profile</h1>
+                <h1 className='text-3xl font-bold text-gray-500 '>Member Profile</h1>
             </div>
 
 

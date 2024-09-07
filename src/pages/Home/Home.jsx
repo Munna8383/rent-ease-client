@@ -3,6 +3,7 @@ import About from "../../components/About/About";
 import Banner from "../../components/Banner/Banner";
 import Coupons from "../../components/Coupons/Coupons";
 import OurLocation from "../../components/OurLocation/OurLocation";
+import Gallery from "../../components/Gallery/Gallery";
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
 
             <Banner></Banner>
             <About></About>
+            <Gallery></Gallery>
             <Coupons></Coupons>
             <OurLocation></OurLocation>
             

@@ -12,7 +12,7 @@ const PaymentPage = () => {
        <div className="space-y-10">
 
 <div className='text-center'>
-                <h1 className='text-2xl lg:text-4xl font-bold text-[#062760]'>Checkout</h1>
+                <h1 className='text-3xl font-bold text-gray-500 '>Checkout</h1>
             </div>
 
 <div className="flex justify-center items-center">
